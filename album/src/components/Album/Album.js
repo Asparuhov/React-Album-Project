@@ -3,7 +3,7 @@ import classes from "./Album.module.css";
 const Album = (props) => {
   return (
     <div className={classes.Item}>
-      <img src={props.source} alt="Error loading" />
+      <img src={props.source} alt="Error loading" onClick={props.open} />
     </div>
   );
 };
