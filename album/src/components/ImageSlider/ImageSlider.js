@@ -17,7 +17,6 @@ const ImageSlider = ({ slides }, props) => {
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
   }
-  const { setPopUp } = props;
   return (
     <>
       <div className="PopUp">

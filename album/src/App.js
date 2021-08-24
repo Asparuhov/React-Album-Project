@@ -1,5 +1,5 @@
-import React from "react";
-import Albums from "./containers/Albums/Albums";
+import React, {useState, useEffect} from "react";
+import Albums from "./components/Albums/Albums";
 import "./appBG.css";
 import ImageSlider from "./components/ImageSlider/ImageSlider";
 import { SliderData } from "./components/ImageSlider/SliderData";
