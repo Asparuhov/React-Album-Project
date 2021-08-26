@@ -71,7 +71,7 @@
   text-align: center;
   margin: 0;
 }
-.slider span {
+.slider .heart {
   content: "\2764";
 }
 .heart {
@@ -112,4 +112,23 @@
 .heart:after {
   left: 15px;
   top: 0;
+}
+
+.close {
+  transition: all 0.2s ease-in-out;
+}
+
+.close:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.close {
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  left: 93%;
+  margin-top: 20px;
+  width: 30px;
+  position: absolute;
 }

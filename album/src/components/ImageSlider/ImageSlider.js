@@ -58,6 +58,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addToFavourites: (photo) => dispatch(actions.addToFavourites(photo)),
     currentFavourite: (photo) => dispatch(actions.currentFavourite(photo)),
+    removeFav: (photoId) => dispatch(actions.removeFav(photoId)),
   };
 };
 export default connect(null, mapDispatchToProps)(ImageSlider);

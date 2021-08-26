@@ -42,8 +42,8 @@ const Albums = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    currentAlbumOpened: state.currentlyOpenedAlbum,
-    favourites: state.favourites,
+    currentAlbumOpened: state.albums.currentlyOpenedAlbum,
+    favourites: state.favourites.favourites,
   };
 };
 const mapDispatchToProps = (dispatch) => {

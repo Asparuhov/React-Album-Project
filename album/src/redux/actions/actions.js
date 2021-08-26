@@ -1,6 +1,7 @@
 const CURRENTOPENEDALBUM = "CURRENTOPENEDALBUM";
 const ADDTOFAVOURITES = "ADDTOFAVOURITES";
 const CURRENTFAVOURITE = "CURRENTFAVOURITE";
+const REMOVEFAV = "REMOVEFAV";
 
 export const openAlbum = (payload) => {
   return {
@@ -21,3 +22,10 @@ export const currentFavourite = (payload) => {
     payload,
   };
 };
+export const removeFav = (payload) => {
+    return {
+      type: REMOVEFAV,
+      payload,
+    };
+  };
+  

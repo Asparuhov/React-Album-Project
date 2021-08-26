@@ -12,15 +12,13 @@ function App(props) {
     axios
       .get("https://jsonplaceholder.typicode.com/photos")
       .then((res) => {
-        setAlbumContent(res.data.slice(0, 500));
+        setAlbumContent(res.data.slice(0, 500).concat(props.favourites));
         setLoaded(true);
-        console.log(res.data.slice(0, 500));
       })
       .catch((err) => console.log(err));
   }, []);
   useEffect(() => {
     setAlbumContent((prev) => prev.concat(props.currentFav));
-    console.log(albumContent);
   }, [props.currentFav]);
 
 
@@ -54,9 +52,9 @@ function App(props) {
 }
 const mapStateToProps = (state) => {
   return {
-    currentAlbumState: state.currentlyOpenedAlbum,
-    favourites: state.favourites,
-    currentFav: state.currentFavourite,
+    currentAlbumState: state.albums.currentlyOpenedAlbum,
+    favourites: state.favourites.favourites,
+    currentFav: state.albums.currentFavourite,
   };
 };
 const mapDispatchToProps = (dispatch) => {
