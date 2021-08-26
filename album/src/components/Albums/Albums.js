@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Albums.css";
-import axios from "axios";
 import Album from "../Album/Album";
 import albums from "../albumsObject/albumsObject";
 import { connect } from "react-redux";
