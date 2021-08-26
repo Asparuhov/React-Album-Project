@@ -18,6 +18,11 @@ function App(props) {
       })
       .catch((err) => console.log(err));
   }, []);
+  useEffect(() => {
+    setAlbumContent((prev) => prev.concat(props.currentFav));
+    console.log(albumContent);
+  }, [props.currentFav]);
+
 
   return (
     <div className="App">
@@ -50,6 +55,8 @@ function App(props) {
 const mapStateToProps = (state) => {
   return {
     currentAlbumState: state.currentlyOpenedAlbum,
+    favourites: state.favourites,
+    currentFav: state.currentFavourite,
   };
 };
 const mapDispatchToProps = (dispatch) => {

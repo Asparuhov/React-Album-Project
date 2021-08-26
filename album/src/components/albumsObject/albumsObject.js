@@ -8,7 +8,7 @@ import album7 from "../../assets/images/album7.jpg";
 import album8 from "../../assets/images/album8.jpg";
 import album9 from "../../assets/images/album9.jpg";
 import album10 from "../../assets/images/album10.jpg";
-
+import album11 from "../../assets/images/album11.png";
 const albums = [
   { id: 1, name: "Random album name 1", url: album1 },
   { id: 2, name: "Random album name 2", url: album2 },
@@ -20,6 +20,7 @@ const albums = [
   { id: 8, name: "Random album name 8", url: album8 },
   { id: 9, name: "Random album name 9", url: album9 },
   { id: 10, name: "Random album name 10", url: album10 },
+  { id: 11, name: "Favourites", url: album11 },
 ];
 
 export default albums;

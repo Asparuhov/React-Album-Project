@@ -6,20 +6,36 @@ import { connect } from "react-redux";
 import * as actions from "../../redux/actions/actions";
 const Albums = (props) => {
   let albumsReady = null;
-  if (albums) {
-    albumsReady = albums.map((album) => {
-      return (
-        <Album
-          source={album.url}
-          key={album.id}
-          open={() => props.openAlbum(album.id)}
-        />
-      );
-    });
+  if (albums && props.favourites.length > 0) {
+    albumsReady = albums
+      .map((album) => {
+        return (
+          <Album
+            source={album.url}
+            key={album.id}
+            open={() => props.openAlbum(album.id)}
+          />
+        );
+      })
+      .reverse();
+  } else if(albums) {
+    albumsReady = albums
+      .map((album) => {
+        if (album.id !== 11) {
+          return (
+            <Album
+              source={album.url}
+              key={album.id}
+              open={() => props.openAlbum(album.id)}
+            />
+          );
+        }
+      })
+      .reverse();
   }
   return (
     <>
-      <div className="Movies">{albumsReady}</div>
+      <div className="Albums">{albumsReady}</div>
     </>
   );
 };
@@ -27,6 +43,7 @@ const Albums = (props) => {
 const mapStateToProps = (state) => {
   return {
     currentAlbumOpened: state.currentlyOpenedAlbum,
+    favourites: state.favourites,
   };
 };
 const mapDispatchToProps = (dispatch) => {
